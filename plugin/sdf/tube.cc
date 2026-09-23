@@ -183,9 +183,16 @@ void Tube::RegisterPlugin() {
         return distance(point, attributes);
       };
   plugin.sdf_aabb = +[](mjtNum aabb[6], const mjtNum* attributes) {
-    aabb[0] = aabb[1] = aabb[2] = 0;
-    aabb[3] = aabb[4] = attributes[0] + attributes[1];
-    aabb[5] = attributes[1];
+  const mjtNum outer_radius = attributes[1];
+  const mjtNum half_height  = attributes[2];
+
+  aabb[0] = 0;
+  aabb[1] = 0;
+  aabb[2] = 0;
+
+  aabb[3] = outer_radius;
+  aabb[4] = outer_radius;
+  aabb[5] = half_height;
   };
   plugin.sdf_attribute =
       +[](mjtNum attribute[], const char* name[], const char* value[]) {
