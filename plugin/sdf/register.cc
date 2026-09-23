@@ -18,6 +18,7 @@
 #include "gear.h"
 #include "nut.h"
 #include "torus.h"
+#include "tube.h"
 
 namespace mujoco::plugin::sdf {
 
@@ -27,6 +28,7 @@ mjPLUGIN_LIB_INIT(sdf) {
   Gear::RegisterPlugin();
   Nut::RegisterPlugin();
   Torus::RegisterPlugin();
+  Tube::RegisterPlugin();
 }
 
 }  // namespace mujoco::plugin::sdf

@@ -30,6 +30,8 @@ set(MUJOCO_SDF_SRCS
     nut.h
     torus.cc
     torus.h
+    tube.cc
+    tube.h
 )
 
 add_library(sdf_plugin SHARED)
